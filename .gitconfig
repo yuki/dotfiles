@@ -11,9 +11,9 @@
     interactive = auto
 [core]
     excludesfile = ~/.gitignore
-    editor = vim
+    editor = nvim
 	autocrlf = input
-#    pager = more
+    pager = less -FRX
 [diff]
     tool=meld
 [merge]
@@ -47,5 +47,4 @@
 	defaultBranch = main
 [fetch]
 	prune = true
-[safe]
-	directory = /home/yuki/repositorios/docker/example-app
+
