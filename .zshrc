@@ -104,3 +104,4 @@ source $ZSH/oh-my-zsh.sh
 #
 export EDITOR='nvim'
 alias vi='nvim'
+export JAVA_HOME=/usr/lib/jvm/default

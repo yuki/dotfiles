@@ -9,6 +9,8 @@ Type=simple
 PrivateTmp=false
 ExecStart=/usr/bin/qbittorrent-nox
 TimeoutStopSec=1800
+MemoryHigh=1200M
+MemoryMax=1500M
 
 [Install]
 WantedBy=default.target
