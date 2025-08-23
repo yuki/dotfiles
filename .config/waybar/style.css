@@ -1,0 +1,26 @@
+* {
+  background-color: black;
+  color: white;
+
+  font-family:  "Sauce Code Pro Nerd Font";
+  font-size: 18px;
+}
+
+
+#workspaces button {
+  all: initial;
+  padding: 0 6px;
+  margin: 0 2px;
+  min-width: 10px;
+}
+
+#tray,
+#pulseaudio,
+#clock {
+  min-width: 12px;
+  margin: 5px 25px;
+}
+
+#custom-expand-icon {
+  margin-right: 7px;
+}
