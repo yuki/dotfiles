@@ -1,0 +1,19 @@
+[Unit]
+Description=PFM
+
+[Container]
+Image=docker.io/ruby:3.3.6
+ContainerName=pfm
+PublishPort=3000:3000
+Volume=/home/backup/pfm:/usr/src/app
+WorkingDir=/usr/src/app
+Exec=sh -c 'bundle install && rake db:migrate && rails server -b 0.0.0.0'
+#Exec=rails server -b 0.0.0.0
+
+[Service]
+ExecStartPre=rm -f /home/backup/pfm/tmp/pids/server.pid
+Restart=always
+TimeoutStartSec=60
+
+[Install]
+WantedBy=multi-user.target default.target

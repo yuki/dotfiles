@@ -1,0 +1,21 @@
+[Unit]
+Description=Jellyfin Media Server
+
+[Container]
+Image=docker.io/jellyfin/jellyfin:latest
+ContainerName=jellyfin
+PublishPort=8096:8096
+AddDevice="nvidia.com/gpu=all"
+Volume=/home/mediarr/jellyfin/config:/config
+Volume=/home/mediarr/jellyfin/cache:/cache
+Volume=/home/disco4tb:/media/disco4tb
+Volume=/home/disco4tb2:/media/disco4tb2
+Volume=/home/disco4tb3:/media/disco4tb3
+
+
+[Service]
+Restart=always
+TimeoutStartSec=60
+
+[Install]
+WantedBy=multi-user.target default.target
