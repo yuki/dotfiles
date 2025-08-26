@@ -1,0 +1,93 @@
+#!/bin/bash
+# based on https://github.com/JaKooLit/Hyprland-Dots/tree/main/config/hypr/scripts/Volume.sh
+# Scripts for notifications for Hyprland
+
+iDIR="/usr/share/icons/breeze-dark/status/24"
+
+TIMEOUT="-t 2000" # Notification timeout in milliseconds (2000ms = 2s)
+URGENCY="-u low" # Notification urgency level (low, normal, critical)
+
+
+# $1 = icon path
+# $2 = title
+# $3 = message
+# $4... = additional notify-send args
+send_notification() {
+    notify-send -e $TIMEOUT $URGENCY -i "$1" "$2" "$3" ${*: 4}
+}
+
+# Get Volume
+get_volume() {
+    volume=$(pamixer --get-volume)
+    if [[ "$volume" -eq "0" ]]; then
+        echo "Muted"
+    else
+        echo "$volume %"
+    fi
+}
+
+# Get icons
+get_volume_icon() {
+    current=$(get_volume)
+    if [[ "$current" == "Muted" ]]; then
+        echo "$iDIR/audio-volume-muted.svg"
+    elif [[ "${current%\%}" -le 30 ]]; then
+        echo "$iDIR/audio-volume-low.svg"
+    elif [[ "${current%\%}" -le 60 ]]; then
+        echo "$iDIR/audio-volume-medium.svg"
+    else
+        echo "$iDIR/audio-volume-high.svg"
+    fi
+}
+
+# Notify
+notify_user() {
+    if [[ "$(get_volume)" == "Muted" ]]; then
+        send_notification "$(get_volume_icon)" " Volume:" " Muted" -h string:x-canonical-private-synchronous:volume_notif -h boolean:SWAYNC_BYPASS_DND:true
+    else
+        send_notification "$(get_volume_icon)" " Volume Level:" " $(get_volume)" -h int:value:$(get_volume | sed 's/%//') -h string:x-canonical-private-synchronous:volume_notif -h boolean:SWAYNC_BYPASS_DND:true
+    fi
+}
+
+# Increase Volume
+inc_volume() {
+    if [ "$(pamixer --get-mute)" == "true" ]; then
+        toggle_mute
+    else
+        pamixer -i 5 --allow-boost --set-limit 150 && notify_user
+    fi
+}
+
+# Decrease Volume
+dec_volume() {
+    if [ "$(pamixer --get-mute)" == "true" ]; then
+        toggle_mute
+    else
+        pamixer -d 5 && notify_user
+    fi
+}
+
+# Toggle Mute
+toggle_mute() {
+	if [ "$(pamixer --get-mute)" == "false" ]; then
+		pamixer -m && send_notification "$(get_volume_icon)" " Mute" " $(get_volume)" -h boolean:SWAYNC_BYPASS_DND:true
+	elif [ "$(pamixer --get-mute)" == "true" ]; then
+    echo "i"
+        pamixer -u && send_notification "$(get_volume_icon)" " Volume: " " $(get_volume)" -h boolean:SWAYNC_BYPASS_DND:true
+	fi
+}
+
+
+# Execute accordingly
+if [[ "$1" == "volume" ]]; then
+	get_volume
+    if [[ "$2" == "--inc" ]]; then
+        inc_volume
+    elif [[ "$2" == "--dec" ]]; then
+	    dec_volume
+    elif [[ "$2" == "--toggle" ]]; then
+	    toggle_mute
+    fi
+elif [[ "$1" == "brightness" ]]; then
+	inc_volume
+fi
