@@ -2,7 +2,7 @@
 Description=PFM
 
 [Container]
-Image=docker.io/ruby:3.3.6
+Image=docker.io/ruby:3.4.7
 ContainerName=pfm
 PublishPort=3000:3000
 Volume=/home/backup/pfm:/usr/src/app
