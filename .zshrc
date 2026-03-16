@@ -1,6 +1,5 @@
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
-export PATH=$HOME/.bin:$PATH
 
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
@@ -105,3 +104,10 @@ source $ZSH/oh-my-zsh.sh
 export EDITOR='nvim'
 alias vi='nvim'
 export JAVA_HOME=/usr/lib/jvm/default
+
+source /usr/share/nvm/init-nvm.sh
+export PATH=~/.bin/:$PATH
+
+
+# Load Angular CLI autocompletion.
+source <(ng completion script)
