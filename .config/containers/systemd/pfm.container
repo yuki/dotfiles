@@ -10,6 +10,7 @@ WorkingDir=/usr/src/app
 Exec=sh -c 'bundle install && rake db:migrate && rails server -b 0.0.0.0'
 #Exec=rails server -b 0.0.0.0
 Network=host
+Environment=RAILS_DEVELOPMENT_HOSTS=archy.local
 
 [Service]
 ExecStartPre=rm -f /home/backup/pfm/tmp/pids/server.pid
