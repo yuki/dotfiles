@@ -1,0 +1,15 @@
+[Unit]
+Description=Flaresolverr
+Requires=servarr.pod
+After=servarr.pod
+
+[Container]
+Image=ghcr.io/flaresolverr/flaresolverr:latest
+ContainerName=flaresolverr
+Volume=/home/servarr/flaresolverr/config:/config
+Pod=servarr.pod
+
+[Service]
+Restart=always
+TimeoutStartSec=60
+

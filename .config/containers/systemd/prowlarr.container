@@ -1,0 +1,15 @@
+[Unit]
+Description=Prowlarr
+Requires=servarr.pod
+After=servarr.pod
+
+[Container]
+Image=lscr.io/linuxserver/prowlarr:latest
+ContainerName=prowlarr
+Volume=/home/servarr/prowlarr/config:/config
+Pod=servarr.pod
+
+[Service]
+Restart=always
+TimeoutStartSec=60
+

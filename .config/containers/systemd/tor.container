@@ -1,0 +1,14 @@
+[Unit]
+Description=tor
+Requires=servarr.pod
+After=servarr.pod
+
+[Container]
+Image=docker.io/dockurr/tor:latest
+ContainerName=tor
+Pod=servarr.pod
+
+[Service]
+Restart=always
+TimeoutStartSec=60
+

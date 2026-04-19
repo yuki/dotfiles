@@ -1,0 +1,32 @@
+[Unit]
+Description=Servarr pod
+
+[Pod]
+PodName=servarr
+ServiceName=servarr
+UserNS=keep-id
+#puertos flaresolverr
+PublishPort=8191
+
+#puertos Jellyfin
+PublishPort=8096:8096
+PublishPort=7359:7359/udp
+PublishPort=1900:1900/udp
+
+#puertos Jackett
+PublishPort=9117:9117
+
+#puertos prowlarr
+PublishPort=9696:9696
+
+#puertos Qbittorrent
+PublishPort=8080:8080
+PublishPort=6881:6881/udp
+PublishPort=6881:6881
+
+#puertos tor
+PublishPort=9050:9050
+PublishPort=9051:9051
+
+[Install]
+WantedBy=multi-user.target default.target
