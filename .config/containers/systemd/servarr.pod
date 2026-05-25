@@ -5,6 +5,7 @@ Description=Servarr pod
 PodName=servarr
 ServiceName=servarr
 UserNS=keep-id
+
 #puertos flaresolverr
 PublishPort=8191
 
@@ -12,6 +13,9 @@ PublishPort=8191
 PublishPort=8096:8096
 PublishPort=7359:7359/udp
 PublishPort=1900:1900/udp
+
+#puertos navidrome
+PublishPort=4533:4533
 
 #puertos Jackett
 PublishPort=9117:9117

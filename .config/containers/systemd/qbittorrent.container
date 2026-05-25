@@ -7,8 +7,7 @@ After=servarr.pod
 Image=lscr.io/linuxserver/qbittorrent:latest
 ContainerName=qbittorrent
 Volume=/home/servarr/qbittorrent/config:/config
-Volume=/home/disco4tb/downloaded_files:/downloads
-Volume=/home/disco4tb/downloaded_temp:/downloads_temp
+Volume=/home/disco4tb:/media
 Volume=/home/yuki/Descargas/torrents:/torrents
 Pod=servarr.pod
 

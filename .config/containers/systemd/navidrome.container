@@ -1,0 +1,20 @@
+[Unit]
+Description=Navidrome
+Requires=servarr.pod
+After=servarr.pod
+
+
+[Container]
+Image=docker.io/deluan/navidrome:latest
+ContainerName=navidrome
+Volume=/home/servarr/navidrome:/data
+Volume=/home/disco4tb3/media/Musica:/music
+Pod=servarr.pod
+
+
+[Service]
+Restart=always
+TimeoutStartSec=60
+
+#[Install]
+#WantedBy=multi-user.target default.target
