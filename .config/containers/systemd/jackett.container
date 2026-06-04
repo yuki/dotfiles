@@ -10,6 +10,7 @@ Environment=TZ=Europe/Madrid
 Environment=AUTO_UPDATE=true
 Volume=/home/servarr/jackett/config:/config
 Volume=/home/servarr/data/downloads:/data/downloads
+AutoUpdate=registry
 Pod=servarr.pod
 
 [Service]

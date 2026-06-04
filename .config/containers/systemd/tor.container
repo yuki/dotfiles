@@ -6,6 +6,7 @@ After=servarr.pod
 [Container]
 Image=docker.io/dockurr/tor:latest
 ContainerName=tor
+AutoUpdate=registry
 Pod=servarr.pod
 
 [Service]

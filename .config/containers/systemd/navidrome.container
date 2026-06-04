@@ -9,6 +9,7 @@ Image=docker.io/deluan/navidrome:latest
 ContainerName=navidrome
 Volume=/home/servarr/navidrome:/data
 Volume=/home/disco4tb3/media/Musica:/music
+AutoUpdate=registry
 Pod=servarr.pod
 
 

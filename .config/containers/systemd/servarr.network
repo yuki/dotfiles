@@ -1,0 +1,6 @@
+[Unit]
+Description=Media stack private network
+
+[Network]
+Label=app=media-stack
+Driver=bridge

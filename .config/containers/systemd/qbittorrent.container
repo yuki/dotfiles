@@ -9,6 +9,7 @@ ContainerName=qbittorrent
 Volume=/home/servarr/qbittorrent/config:/config
 Volume=/home/disco4tb:/media
 Volume=/home/yuki/Descargas/torrents:/torrents
+AutoUpdate=registry
 Pod=servarr.pod
 
 [Service]
