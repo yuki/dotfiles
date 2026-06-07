@@ -32,10 +32,7 @@ PublishPort=6771:6771/udp
 
 
 #puertos tor
-PublishPort=9050:9050
-PublishPort=9051:9051
+#PublishPort=9050:9050
+#PublishPort=9051:9051
 
-#Network=servarr.network
-
-[Install]
-WantedBy=default.target
+Network=servarr.network

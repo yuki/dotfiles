@@ -1,13 +1,16 @@
 [Unit]
 Description=tor
-Requires=servarr.pod
-After=servarr.pod
+#Requires=servarr.pod
+#After=servarr.pod
 
 [Container]
 Image=docker.io/dockurr/tor:latest
 ContainerName=tor
+PublishPort=9050:9050
+PublishPort=9051:9051
 AutoUpdate=registry
-Pod=servarr.pod
+Network=servarr.network
+#Pod=servarr.pod
 
 [Service]
 Restart=always
