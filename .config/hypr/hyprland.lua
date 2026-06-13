@@ -259,7 +259,6 @@ hl.config({
     xwayland = {
         enabled = true, -- enable xwayland, needed for Steam
     },
-
 })
 
 
@@ -342,13 +341,13 @@ hl.bind(mainMod .. " + SHIFT + Up", hl.dsp.window.move({ direction = "up" }))
 hl.bind(mainMod .. " + SHIFT + Down", hl.dsp.window.move({ direction = "down" }))
 
 -- Screenshots
-hl.bind("PRINT", hl.dsp.exec_cmd("~/.bin/omarchy-cmd-screenshot"), {
+hl.bind("PRINT", hl.dsp.exec_cmd("~/.local/bin/omarchy-cmd-screenshot"), {
     description = "Screenshot of region",
 })
-hl.bind("SHIFT + PRINT", hl.dsp.exec_cmd("~/.bin/omarchy-cmd-screenshot window"), {
+hl.bind("SHIFT + PRINT", hl.dsp.exec_cmd("~/.local/bin/omarchy-cmd-screenshot window"), {
     description = "Screenshot of window",
 })
-hl.bind("CTRL + PRINT", hl.dsp.exec_cmd("~/.bin/omarchy-cmd-screenshot output"), {
+hl.bind("CTRL + PRINT", hl.dsp.exec_cmd("~/.local/bin/omarchy-cmd-screenshot output"), {
     description = "Screenshot of display",
 })
 
@@ -402,15 +401,15 @@ hl.bind(mainMod .. " + CONTROL + down", hl.dsp.window.resize({ x = 0, y = 50, re
 -- hl.bind("XF86MonBrightnessUp",  hl.dsp.exec_cmd("brightnessctl -e4 -n2 set 5%+"),                  { locked = true, repeating = true })
 -- hl.bind("XF86MonBrightnessDown",hl.dsp.exec_cmd("brightnessctl -e4 -n2 set 5%-"),                  { locked = true, repeating = true })
 
-hl.bind("xf86audioraisevolume", hl.dsp.exec_cmd("~/.bin/notifications volume --inc"), {
+hl.bind("xf86audioraisevolume", hl.dsp.exec_cmd("~/.local/bin/notifications volume --inc"), {
     repeating = true,
     locked = true,
 })
-hl.bind("xf86audiolowervolume", hl.dsp.exec_cmd("~/.bin/notifications volume --dec"), {
+hl.bind("xf86audiolowervolume", hl.dsp.exec_cmd("~/.local/bin/notifications volume --dec"), {
     repeating = true,
     locked = true,
 })
-hl.bind("XF86AudioMute", hl.dsp.exec_cmd("~/.bin/notifications volume --toggle"), {
+hl.bind("XF86AudioMute", hl.dsp.exec_cmd("~/.local/bin/notifications volume --toggle"), {
     repeating = true,
     locked = true,
 })

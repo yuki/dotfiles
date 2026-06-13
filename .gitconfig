@@ -15,9 +15,13 @@
 	autocrlf = input
     pager = less -FRX
 [diff]
-    tool=meld
+    tool=nvimdiff
+[difftool]
+    prompt=false
+[difftool "nvimdiff"]
+    cmd = "nvim -d \"$REMOTE\" \"$LOCAL\""
 [merge]
-    tool=vimdiff
+    tool=nvimdiff
 [push]
     defaul=simple
 [alias]
