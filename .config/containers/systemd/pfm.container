@@ -16,3 +16,6 @@ Environment=RAILS_DEVELOPMENT_HOSTS=archy.local
 ExecStartPre=rm -f /home/backup/pfm/tmp/pids/server.pid
 Restart=always
 TimeoutStartSec=60
+
+[Install]
+WantedBy=default.target

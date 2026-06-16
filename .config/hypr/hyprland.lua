@@ -52,7 +52,7 @@ local browser = "google-chrome-stable"
 -- end)
 
 hl.on("hyprland.start", function()
-    hl.exec_cmd("waybar & hyprpaper")
+    hl.exec_cmd("waybar")
     hl.exec_cmd("XDG_MENU_PREFIX=arch- kbuildsycoca6")
     hl.exec_cmd("systemctl --user restart hyprpolkitagent")
     hl.exec_cmd("xhost SI:root:yuki")
@@ -77,18 +77,26 @@ hl.env("XDG_SESSION_DESKTOP", "Hyprland")
 
 -- QT
 hl.env("QT_QPA_PLATFORM", "wayland;xcb")
+-- hl.env("QT_QPA_PLATFORMTHEME", "qt5ct")
+-- hl.env("QT_QPA_PLATFORMTHEME", "hyprqt6engine")
 hl.env("QT_QPA_PLATFORMTHEME", "qt6ct")
-hl.env("QT_QPA_PLATFORMTHEME", "qt5ct")
 hl.env("QT_WAYLAND_DISABLE_WINDOWDECORATION", "1")
 hl.env("QT_AUTO_SCREEN_SCALE_FACTOR", "1")
 hl.env("QT_STYLE_OVERRIDE", "Breeze")
 
 -- GDK
 hl.env("GDK_SCALE", "1")
-hl.env("GDK_BACKEND", "wayland")
+hl.env("GDK_BACKEND", "wayland,x11,*")
 
--- SDL version
-hl.env("SDL_VIDEODRIVER", "wayland")
+-- SDL version; error en Shadow of the Tomb Raider
+-- hl.env("SDL_VIDEODRIVER", "wayland")
+
+hl.env("CLUTTER_BACKEND", "wayland")
+
+-- NVIDIA
+hl.env("GBM_BACKEND", "nvidia-drm")
+hl.env("__GLX_VENDOR_LIBRARY_NAME", "nvidia")
+hl.env("LIBVA_DRIVER_NAME", "nvidia")
 
 -- Mozilla
 hl.env("MOZ_ENABLE_WAYLAND", "1")

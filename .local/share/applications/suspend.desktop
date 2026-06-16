@@ -2,5 +2,5 @@
 Actions=Suspend;
 Categories=System
 Comment=Para suspender el equipo
-Exec=sudo systemctl suspend
+Exec=systemctl suspend
 Name=Suspend
