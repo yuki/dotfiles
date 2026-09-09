@@ -56,6 +56,7 @@ hl.on("hyprland.start", function()
     hl.exec_cmd("XDG_MENU_PREFIX=arch- kbuildsycoca6")
     hl.exec_cmd("systemctl --user restart hyprpolkitagent")
     hl.exec_cmd("xhost SI:root:yuki")
+    hl.exec_cmd("hypridle")
 end)
 
 
@@ -357,6 +358,11 @@ hl.bind("SHIFT + PRINT", hl.dsp.exec_cmd("~/.local/bin/omarchy-cmd-screenshot wi
 })
 hl.bind("CTRL + PRINT", hl.dsp.exec_cmd("~/.local/bin/omarchy-cmd-screenshot output"), {
     description = "Screenshot of display",
+})
+
+-- Lock Screen / hyprlock
+hl.bind(mainMod .. " + L", hl.dsp.exec_cmd("loginctl lock-session"), {
+    description = "lock the screen",
 })
 
 

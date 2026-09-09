@@ -21,7 +21,7 @@ makepkg -si
 ```
 
 - hyprland como windowmanager:
-  - mako waybar hyprpaper hyprpolkitagent ttf-nerd-fonts-symbols ttf-nerd-fonts-symbols-mono ttf-sourcecodepro-nerd satty hyprshot fuzzel hyprqt6engine
+  - mako waybar hyprpaper hyprpolkitagent ttf-nerd-fonts-symbols ttf-nerd-fonts-symbols-mono ttf-sourcecodepro-nerd satty hyprshot fuzzel hyprqt6engine hypridle hyprlock
 
 - otros:
   - gamemode steam telegram-desktop fuse2 nvtop python-pip vlc vlc-plugins-extra vlc-plugin-dvd vlc-plugin-bluray vlc-plugin-x265
