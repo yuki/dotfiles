@@ -9,7 +9,7 @@ La gestión de los dotfiles la hago con [YADM](https://yadm.io/). Algunos de ell
 Los paquetes que necesito en mi día a día:
 
 - base:
-  - git base-devel neovim terminator yadm zsh etckeeper podman podma-compose podlet qemu-full virt-manager nvidia-settings firefox syncthing nvidia-container-toolkit
+  - git base-devel neovim terminator yadm zsh etckeeper podman podman-compose podlet qemu-full virt-manager nvidia-settings firefox syncthing nvidia-container-toolkit
   - instalar/configurar [Oh My Zsh](https://ohmyz.sh/)
   - activar etckeeper
 
@@ -24,7 +24,7 @@ makepkg -si
   - mako waybar hyprpaper hyprpolkitagent ttf-nerd-fonts-symbols ttf-nerd-fonts-symbols-mono ttf-sourcecodepro-nerd satty hyprshot fuzzel hyprqt6engine
 
 - otros:
-  - gamemode steam telegram-desktop fuse2 nvtop python-pip
+  - gamemode steam telegram-desktop fuse2 nvtop python-pip vlc vlc-plugins-extra vlc-plugin-dvd vlc-plugin-bluray vlc-plugin-x265
 
 
 ## Servicios a configurar
@@ -37,4 +37,6 @@ Tengo varios servicios que deben estar corriendo y configurando:
     - `systemctl --user enable gamemode`
 - arranque de pods automáticamente sin login
     - `loginctl enable-linger $USER`
-
+- **libvirtd** para virtualización
+    - `systemctl enable libvirtd.service`
+ 
