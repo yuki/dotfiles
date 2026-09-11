@@ -9,7 +9,7 @@ La gestión de los dotfiles la hago con [YADM](https://yadm.io/). Algunos de ell
 Los paquetes que necesito en mi día a día:
 
 - base:
-  - git base-devel neovim terminator yadm zsh etckeeper podman podman-compose podlet qemu-full virt-manager nvidia-settings firefox syncthing nvidia-container-toolkit
+  - git base-devel neovim terminator yadm zsh etckeeper podman podman-compose podlet qemu-full virt-manager nvidia-settings firefox syncthing nvidia-container-toolkit pamixer pamixer
   - instalar/configurar [Oh My Zsh](https://ohmyz.sh/)
   - activar etckeeper
 
