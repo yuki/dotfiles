@@ -10,9 +10,9 @@ UserNS=keep-id
 PublishPort=8191
 
 #puertos Jellyfin
-PublishPort=8096:8096
-PublishPort=7359:7359/udp
-PublishPort=1900:1900/udp
+#PublishPort=8096:8096
+#PublishPort=7359:7359/udp
+#PublishPort=1900:1900/udp
 
 #puertos navidrome
 PublishPort=4533:4533
@@ -36,3 +36,6 @@ PublishPort=6771:6771/udp
 #PublishPort=9051:9051
 
 Network=servarr.network
+
+[Install]
+WantedBy=default.target

@@ -1,26 +1,31 @@
 [Unit]
 Description=Jellyfin Media Server
-Requires=servarr.pod
-After=servarr.pod
+#Requires=servarr.pod
+#After=servarr.pod
 
 
 [Container]
 Image=docker.io/jellyfin/jellyfin:latest
 ContainerName=jellyfin
-PodmanArgs=--runtime=nvidia
-AddDevice="nvidia.com/gpu=all"
+PodmanArgs=--privileged --gpus=all
+Environment=NVIDIA_VISIBLE_DEVICES=all
 Volume=/home/servarr/jellyfin/config:/config
 Volume=/home/servarr/jellyfin/cache:/cache
 Volume=/home/disco4tb:/media/disco4tb
 Volume=/home/disco4tb2:/media/disco4tb2
 Volume=/home/disco4tb3:/media/disco4tb3
 AutoUpdate=registry
-Pod=servarr.pod
+PublishPort=8096:8096
+PublishPort=7359:7359/udp
+PublishPort=1900:1900/udp
+
+
+#Pod=servarr.pod
 
 
 [Service]
 Restart=always
 TimeoutStartSec=60
 
-#[Install]
-#WantedBy=multi-user.target default.target
+[Install]
+WantedBy=multi-user.target default.target

@@ -1,5 +1,5 @@
 # If you come from bash you might have to change your $PATH.
-export PATH=$HOME/bin:$HOME/.local/bin:/usr/local/bin:$PATH
+export PATH=$HOME/.local/share/mise/installs/bun/latest/bin:$HOME/bin:$HOME/.local/bin:/usr/local/bin:$PATH
 
 # Path to your Oh My Zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
@@ -25,7 +25,7 @@ ZSH_THEME="agnoster"
 
 # Uncomment one of the following lines to change the auto-update behavior
 # zstyle ':omz:update' mode disabled  # disable automatic updates
-# zstyle ':omz:update' mode auto      # update automatically without asking
+# zstyle ':omz:update' mode auto      # updateautomatically without asking
 # zstyle ':omz:update' mode reminder  # just remind me to update when it's time
 
 # Uncomment the following line to change how often to auto-update (in days).
@@ -106,3 +106,6 @@ source $ZSH/oh-my-zsh.sh
 export EDITOR='nvim'
 alias vi='nvim'
 
+eval "$(/home/yuki/.local/bin/mise activate zsh)"
+fpath+=('/home/yuki/.local/share/zsh/site-functions')
+autoload -Uz compinit && compinit

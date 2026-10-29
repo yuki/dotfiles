@@ -26,7 +26,13 @@ makepkg -si
 - otros:
   - gamemode steam telegram-desktop fuse2 nvtop python-pip vlc vlc-plugins-extra vlc-plugin-dvd vlc-plugin-bluray vlc-plugin-x265
 - desarrollo:
-  - mise visual-studio-code-bin
+  - [mise](https://mise.jdx.dev/) visual-studio-code-bin
+
+
+- autofirma y dni-e:
+  - opensc autofirma
+    - abrirlo y darle a "restaurar"
+  - activar servicios: `sudo systemctl enable pcscd.service && sudo systemctl start pcscd.service`
 
 
 ## Servicios a configurar
@@ -39,6 +45,6 @@ Tengo varios servicios que deben estar corriendo y configurando:
     - `systemctl --user enable gamemode`
 - arranque de pods automáticamente sin login
     - `loginctl enable-linger $USER`
-- **libvirtd** para virtualización
+- **libvirtd** para virtualización qemu/kvm
     - `systemctl enable libvirtd.service`
  
